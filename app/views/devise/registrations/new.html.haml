@@ -1,0 +1,27 @@
+%h2 Sign up
+%div.row
+  %div{:class =>"col-md-6 col-md-offset-3"}
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      %div
+        = f.label :name
+        %br/
+        = f.text_field :name, class: "form-control"
+        %br/
+        = f.label 'Date of birth'
+        %br/
+        = f.date_select :dob
+        %br/
+        = f.label :email
+        %br/
+        = f.email_field :email, class: "form-control"
+      %div
+        = f.label :password
+        %br/
+        = f.password_field :password, class: "form-control", autocomplete: "off"
+      %div
+        = f.label :password_confirmation
+        %br/
+        = f.password_field :password_confirmation, class: "form-control",autocomplete: "off"
+      %div= f.submit "Sign up", class:"btn btn-primary"
+    = render "devise/shared/links"
