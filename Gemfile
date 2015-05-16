@@ -7,9 +7,10 @@ gem 'bootstrap-sass',       '3.2.0.0'
 gem 'devise'
 gem 'cancancan', '~> 1.9'
 gem  'html2haml'
+gem "figaro"
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-
+gem 'jquery-turbolinks'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -31,10 +32,13 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 group :development, :test do 
-
+  gem 'test-unit'
   gem 'rspec-rails', '~> 3.0.0' 
   gem 'factory_girl_rails' 
-   gem 'faker' 
+  gem 'faker' 
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails',   '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
 end 
 
 group :test do 
@@ -54,7 +58,7 @@ end
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+gem 'capistrano', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

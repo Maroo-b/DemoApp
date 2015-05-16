@@ -1,18 +1,24 @@
 DemoApp::Application.routes.draw do
   
   devise_scope :admin do
-  get "admin", to: "devise/sessions#new"
-  post "admin", to: "desvise/sessions#create"
- 
-end
-  devise_for :admins 
- namespace :admin do 
- resources :articles
- end  
+    get "admin", to: "devise/sessions#new"
+    post "admin", to: "desvise/sessions#create"
+    
+  end
+  
+  devise_for :admins
+  namespace :admin do 
+    resources :articles
+  end
+    
   resources :articles do
     resources :comments
+    collection do
+      post "invite"
+      get "invite_form"
+    end
   end
-
+  
   devise_for :users
   resources :users, only: [:show]
   get 'about' => "home#about"

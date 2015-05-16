@@ -1,1 +1,10 @@
-%h2 admin index
+-# it's important to allow delete method for sign out 
+!!!
+%html
+  %head
+    %title DemoApp
+    
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %h2 admin index
+  = link_to "Log out", destroy_admin_session_path, :method => :delete

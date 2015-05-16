@@ -61,7 +61,14 @@ class ArticlesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def invite_form 
+  end
+  
+  def invite
+    Inviter.invite(params[:name].to_s,params[:email].to_s).deliver
+    flash[:success] = "Invitation sent"
+    redirect_to root_path
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article

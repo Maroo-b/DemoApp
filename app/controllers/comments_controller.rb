@@ -17,8 +17,6 @@ class CommentsController < ApplicationController
           format.html { redirect_to @article, success: 'merci pour votre commentaire' }
           format.js
           end
-      
-       
      end 
   end
   

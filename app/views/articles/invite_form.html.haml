@@ -1,0 +1,14 @@
+%div.row
+  %div{:class =>"col-md-3"} 
+    %h2 Send invitation
+  %div{:class => "col-md-5"}
+    = form_tag invite_articles_path do
+      %label
+        Name
+      = text_field_tag :name,nil, class: "form-control" 
+      %br
+      %label
+        Email
+      = text_field_tag :email,nil, class: "form-control"
+      %br
+      = submit_tag "Send", class:"btn btn-primary"

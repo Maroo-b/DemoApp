@@ -1,0 +1,10 @@
+= form_tag invite_articles_path do
+  %label
+    Name
+  = text_field_tag :name 
+  %br
+  %label
+    Email
+  = text_field_tag :email
+  %br
+  = submit_tag("Send")

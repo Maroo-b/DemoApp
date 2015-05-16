@@ -1,0 +1,5 @@
+
+
+= @greeting
+Visit our demo app at 
+=link_to 'demo app', root_url

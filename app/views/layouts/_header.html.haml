@@ -1,7 +1,14 @@
 %header.navbar.navbar-fixed-top.navbar-inverse
-  .container
-   
-    %nav
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+     
+    
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
         %li
           = link_to "Home", root_path
@@ -18,6 +25,7 @@
                 = link_to "Profile", user_path(current_user)
               %li
                 = link_to "Settings", edit_user_registration_path(current_user)
+                = link_to "Invite friends",invite_form_articles_path
               %li.divider
               %li
                 = link_to "Log out", destroy_user_session_path, method: "delete"

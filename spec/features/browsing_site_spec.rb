@@ -3,8 +3,6 @@ require 'rails_helper'
 RSpec.describe "static page", :type => :feature do
 
   describe "home page" do
-         
-    
     it "have title and navigations links" do
       visit root_path
      expect(page).to have_selector("h1", :text => "Welcome to PicBook")
